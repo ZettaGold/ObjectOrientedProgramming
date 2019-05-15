@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EmployeeInformation
+{
+    struct Employee 
+    {
+        private  int corpID;
+        private String firstName, lastName, empPhoneNum, empPosition;
+      
+        public void SetEmpPhoneNum(int empPhoneNum)
+        {
+            this.empPhoneNum = empPhoneNum;
+        }
+        public void SetPosition(int empPosition)
+        {
+            this.SetPosition = empPosition;
+        }
+        public string GetEmpPhoneNum()
+        {
+            return this.getEmpPhoneNum;
+        }
+        public string GetPosition()
+        {
+            return this.GetPosition;
+        }
+        public void SetCorpID(int corpID)
+        {
+            this.corpID = corpID;
+        }
+        public int GetCorpID()
+        {
+            return this.corpID;
+        }
+        public void SetFirstName(String firstName)
+        {
+            this.firstName = firstName;
+        }
+        public String GetFirstName()
+        {
+            return this.firstName;
+        }
+        public void SetLastName(String lastName)
+        {
+            this.lastName = lastName;
+        }
+        public String GetLastName()
+        {
+            return this.lastName;
+        }
+        public string GetInfos()
+        {
+            string state;
+            state = this.corpID + " - " + this.firstName + " - " + this.lastName + " - " + this.GetEmpPhoneNum + " - " + this.GetPosition;
+            return state;
+        }
+        public override  string ToString()
+        {
+            string state;
+            state = this.corpID + " - " + this.firstName + " - " + this.lastName + " - " + this.GetEmpPhoneNum + " - " + this.GetPosition;
+            return state;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input; string output;
+            Employee employee = new Employee(); ;
+           
+            Console.Write("Input corporate ID: ");
+            input = Console.ReadLine();
+            
+            employee.SetCorpID(Convert.ToInt32(input));
+            Console.Write("First name: ");
+            employee.SetFirstName(Console.ReadLine());
+            Console.Write("Last name: ");
+            employee.SetLastName(Console.ReadLine());
+            Console.Write("Telephone Number: ");
+            employee.SetEmpPhoneNum(Console.ReadLine());
+            Console.Write("Employee position: ");
+            employee.GetPosition(Console.ReadLine());
+
+           
+            Console.WriteLine("Employee Info: ");
+            Console.WriteLine(employee);
+            Console.ReadKey();
+        }
+    }
+}
